@@ -1,4 +1,6 @@
-﻿namespace BaltaDataAccess
+﻿using Microsoft.Data.SqlClient;
+
+namespace BaltaDataAccess
 {
     class Program
     {
