@@ -18,8 +18,9 @@ namespace BaltaDataAccess
                 // CreateManyCategory(connection);
                 // UpdateCategory(connection);
                 // DeleteCategory(connection);
-                ExecuteProcedure(connection);
-                //ListCategories(connection);
+                // ExecuteProcedure(connection);
+                // ListCategories(connection);
+                ExecuteReadProcedure(connection);
             }
         }
 
@@ -69,7 +70,7 @@ namespace BaltaDataAccess
             Console.WriteLine($"{rows} linha(s) atualizada(s)");
         }
 
-         static void DeleteCategory(SqlConnection connection)
+        static void DeleteCategory(SqlConnection connection)
         {
             var deleteQuery = "DELETE [Category] WHERE [Id]=@id";
             var rows = connection.Execute(deleteQuery, new
@@ -125,11 +126,24 @@ namespace BaltaDataAccess
             Console.WriteLine($"{rows} linha(s) inserida(s)");
         }
 
-        static void ExecuteProcedure(SqlConnection connection){
+        static void ExecuteProcedure(SqlConnection connection)
+        {
             var procedure = "spDeleteStudent";
             var pars = new { StudentId = "fa904b47-287e-4515-9582-396816b829eb" };
             var affectedRows = connection.Execute(procedure, pars, commandType: CommandType.StoredProcedure);
             Console.WriteLine($"{affectedRows} linha(s) afetada(s)");
+        }
+
+        static void ExecuteReadProcedure(SqlConnection connection)
+        {
+            var procedure = "[spGetCoursesByCategory]";
+            var pars = new { CategoryId = "09ce0b7b-cfca-497b-92c0-3290ad9d5142" };
+            var courses = connection.Query(procedure, pars, commandType: CommandType.StoredProcedure);
+
+            foreach (var item in courses)
+            {
+                Console.WriteLine(item.Title);
+            }
         }
     }
 }
