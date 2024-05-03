@@ -6,14 +6,13 @@ namespace Blog.Repositories
 {
     public class UserRepository
     {
-        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=1q2w3e4r@#$; TrustServerCertificate=True";
+        private SqlConnection _connection = new SqlConnection("");
+
+        public IEnumerable<User> Get() => _connection.GetAll<User>();
+
+        public User Get(int id) => _connection.Get<User>(id);
+
+        public void Create(User user) => _connection.Insert<User>(user);
         
-        public IEnumerable<User> Get()
-        {
-            using (var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                return connection.GetAll<User>();
-            }
-        }
     }
 }
