@@ -13,8 +13,8 @@ namespace Blog
             var connection = new SqlConnection(CONNECTION_STRING);
             connection.Open();
 
-            //ReadUsers(connection);
-            ReadRoles(connection);
+            ReadUsers(connection);
+            //ReadRoles(connection);
             
             connection.Close();
         }
@@ -31,7 +31,7 @@ namespace Blog
 
         public static void ReadRoles(SqlConnection connection)
         {
-            var repository = new RoleRepository(connection);
+            var repository = new Repository<User>(connection);
             var roles = repository.Get();
 
             foreach (var role in roles)
