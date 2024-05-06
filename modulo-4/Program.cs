@@ -16,12 +16,12 @@ namespace Blog
             Console.WriteLine("***** Users *****");
             ReadUsers(connection);
 
-            Console.WriteLine("***** Roles *****");
-            ReadRoles(connection);
+            // Console.WriteLine("***** Roles *****");
+            // ReadRoles(connection);
 
-            Console.WriteLine("***** Tags *****");
-            ReadTags(connection);
-            
+            // Console.WriteLine("***** Tags *****");
+            // ReadTags(connection);
+
             connection.Close();
         }
 
@@ -31,7 +31,14 @@ namespace Blog
             var items = repository.Get();
 
             foreach (var item in items)
+            {
                 Console.WriteLine(item.Name);
+
+                foreach (var role in item.Roles)
+                {
+                    Console.WriteLine(role.Name);
+                }
+            }
         }
 
         public static void ReadRoles(SqlConnection connection)
@@ -51,6 +58,6 @@ namespace Blog
             foreach (var item in items)
                 Console.WriteLine(item.Name);
         }
-       
+
     }
 }
