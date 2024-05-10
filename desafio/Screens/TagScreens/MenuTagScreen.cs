@@ -20,7 +20,7 @@ namespace Blog.Screens.TagScreens
             switch (option)
             {
                 case 1:
-                    ListTagScreem.Load();
+                    ListTagScreen.Load();
                     break;
                 case 2:
                     CreateTagScreen.Load();

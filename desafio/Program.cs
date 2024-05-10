@@ -1,5 +1,6 @@
 ﻿using Blog.Models;
 using Blog.Repositories;
+using Blog.Screens.GategoryScreens;
 using Blog.Screens.TagScreens;
 using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
@@ -41,6 +42,9 @@ namespace Blog
 
             switch (option)
             {
+                case 3:
+                    MenuCategoryScreen.Load();
+                    break;
                 case 4:
                     MenuTagScreen.Load();
                     break;

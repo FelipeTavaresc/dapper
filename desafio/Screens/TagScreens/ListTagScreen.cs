@@ -3,7 +3,7 @@ using Blog.Repositories;
 
 namespace Blog.Screens.TagScreens
 {
-    public static class ListTagScreem
+    public static class ListTagScreen
     {
         public static void Load()
         {
