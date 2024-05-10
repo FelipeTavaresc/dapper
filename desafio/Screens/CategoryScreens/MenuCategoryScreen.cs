@@ -19,7 +19,7 @@ namespace Blog.Screens.GategoryScreens
             switch (option)
             {
                 case 1:
-                    ListCategoryScreem.Load();
+                    ListCategoryScreen.Load();
                     break;
                 case 2:
                     CreateCategoryScreen.Load();

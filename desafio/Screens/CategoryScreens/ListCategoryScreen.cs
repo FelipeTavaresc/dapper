@@ -3,7 +3,7 @@ using Blog.Repositories;
 
 namespace Blog.Screens.GategoryScreens
 {
-    public static class ListCategoryScreem
+    public static class ListCategoryScreen
     {
         public static void Load()
         {
