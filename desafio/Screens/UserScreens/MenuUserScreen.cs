@@ -26,9 +26,9 @@ namespace Blog.Screens.UserScreens
                 case 3:
                     UpdateUserScreen.Load();
                     break;
-                // case 4:
-                //     DeleteCategoryScreen.Load();
-                //     break;
+                case 4:
+                    DeleteUserScreen.Load();
+                    break;
                 default: Load(); break;
             }
         }
