@@ -1,11 +1,8 @@
-﻿using Blog.Models;
-using Blog.Repositories;
-using Blog.Screens.GategoryScreens;
+﻿using Blog.Screens.GategoryScreens;
+using Blog.Screens.RoleScreens;
 using Blog.Screens.TagScreens;
 using Blog.Screens.UserScreens;
-using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
-using System;
 
 namespace Blog
 {
@@ -45,6 +42,8 @@ namespace Blog
             {
                 case 1:
                     MenuUserScreen.Load(); break;
+                case 2:
+                    MenuRoleScreen.Load(); break;
                 case 3:
                     MenuCategoryScreen.Load(); break;
                 case 4:
