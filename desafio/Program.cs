@@ -1,5 +1,6 @@
 ﻿using Blog.Screens.GategoryScreens;
 using Blog.Screens.PostScreens;
+using Blog.Screens.PostTagScreens;
 using Blog.Screens.RoleScreens;
 using Blog.Screens.TagScreens;
 using Blog.Screens.UserRoleScreens;
@@ -55,6 +56,8 @@ namespace Blog
                     MenuPostScreen.Load(); break;
                 case 6:
                     MenuUserRoleScreen.Load(); break;
+                    case 7:
+                    MenuPostTagScreen.Load(); break;
                 default: Load(); break;
             }
         }
