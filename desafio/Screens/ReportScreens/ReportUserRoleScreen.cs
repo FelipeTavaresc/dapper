@@ -22,7 +22,9 @@ namespace Blog.Screens.ReportScreens
             var userRoles = repository.ListUserRoles();
             foreach (var item in userRoles)
             {
-                Console.WriteLine($"{item.Name} - {item.Roles.FirstOrDefault().Name}");
+                Console.WriteLine($"{item.Name}");
+                foreach (var role in item.Roles)
+                    Console.WriteLine($"- {role.Name}");
             }
         }
     }
