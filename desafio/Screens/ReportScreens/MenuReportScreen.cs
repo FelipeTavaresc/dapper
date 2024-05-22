@@ -9,7 +9,8 @@ namespace Blog.Screens.ReportScreens
             Console.WriteLine("---------------");
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine();
-            Console.WriteLine("1 - Listar Usuários por Perfis");
+            Console.WriteLine("1 - Listar Usuários e Perfis");
+            Console.WriteLine("2 - Listar Posts e Tags");
             Console.WriteLine();
             var option = short.Parse(Console.ReadLine()!);
 
@@ -17,6 +18,9 @@ namespace Blog.Screens.ReportScreens
             {
                 case 1:
                     ReportUserRoleScreen.Load();
+                    break;
+                case 2:
+                    ReportPostTagScreen.Load();
                     break;
                 default: Load(); break;
             }
