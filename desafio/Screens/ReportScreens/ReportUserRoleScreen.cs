@@ -9,7 +9,7 @@ namespace Blog.Screens.ReportScreens
         public static void Load()
         {
             Console.Clear();
-            Console.WriteLine("Usuários por perfis");
+            Console.WriteLine("Usuários e perfis");
             Console.WriteLine("-------------------");
             List();
             Console.ReadKey();
